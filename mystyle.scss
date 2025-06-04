@@ -1,3 +1,100 @@
+@use 'sass:color';
+
+$base-bg-color-1: #845ec2;
+$base-bg-color-2: #ff9671;
+$base-bg-color-3: #ff6f91;
+$base-color: white;
+$variation-color: grey;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: aquamarine;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.container-1, .container-2, .container-3 {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 1000px;
+  margin: 10px auto;
+
+  .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $base-color;
+    border-radius: 5px;
+    min-width: 100px;
+    height: 100px;
+  }
+
+  .base-color {
+    min-width: 130px;
+  }
+  
+}
+
+.container-1 {
+  .base-color {
+    background-color: $base-bg-color-1;
+  }
+
+  @for $i from 1 through 4 {
+    .lighten-#{$i} {
+      background-color: color.adjust($base-bg-color-1, $lightness: $i * 5%);
+      color: color.scale($variation-color, $lightness: $i * -5%);
+    }
+
+    .darken-#{$i} {
+      background-color: darken($base-bg-color-1, $i * 5%);
+      color: color.adjust($variation-color, $lightness: $i * 5%);
+    }
+  }
+
+}
+.container-2 {
+  .base-color {
+    background-color: $base-bg-color-2;
+  }
+
+  @for $i from 1 through 4 {
+    .lighten-#{$i} {
+      background-color: color.adjust($base-bg-color-2, $lightness: $i * 5%);  
+      color: color.scale($variation-color, $lightness: $i * -5%);
+    }
+
+    .darken-#{$i} {
+      background-color: darken($base-bg-color-2, $i * 5%);
+      color: color.adjust($variation-color, $lightness: $i * 5%);
+    }
+  }
+
+}
+.container-3 {
+  .base-color {
+    background-color: $base-bg-color-3;
+  }
+
+  @for $i from 1 through 4 {
+    .lighten-#{$i} {
+      background-color: color.adjust($base-bg-color-3, $lightness: $i * 5%);  
+      color: color.scale($variation-color, $lightness: $i * -5%);
+    }
+
+    .darken-#{$i} {
+      background-color: darken($base-bg-color-3, $i * 5%);
+      color: color.adjust($variation-color, $lightness: $i * 5%);
+    }
+  }
+
 }
