@@ -17,7 +17,8 @@ This repository contains a set of exercises for the **Layout Module** of the [Le
         - Box shadow
         - Font family
 
-    <!-- ![Applied themes](./ejemplo.png) -->
+![Light theme](./assets/light-theme.png)
+![Dark theme](./assets/dark-theme.png)
 
 3. **Exercise 3: Create a navigation bar using Flexbox.**
     - The HTML is completely open, meaning you can create the necessary structures as needed. The navigation bar responds to different resolutions. Use media queries to achieve this result.
