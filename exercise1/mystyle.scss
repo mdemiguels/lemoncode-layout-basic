@@ -1,10 +1,22 @@
 @use 'sass:color';
+@use 'sass:list';
 
-$base-bg-color-1: #845ec2;
-$base-bg-color-2: #ff9671;
-$base-bg-color-3: #ff6f91;
+$base-bg-colors: #845ec2, #ff9671, #ff6f91;
 $base-color: white;
 $variation-color: grey;
+
+@mixin color-palette($container) {
+  @for $i from 1 through 4 {
+    .container-#{$container} .lighten-#{$i} {
+      background-color: color.adjust(list.nth($base-bg-colors, $container), $lightness: $i * 5%);
+      color: color.scale($variation-color, $lightness: $i * -5%);
+    }
+    .container-#{$container} .darken-#{$i} {
+      background-color: color.adjust(list.nth($base-bg-colors, $container), $lightness: $i * -5%);
+      color: color.adjust($variation-color, $lightness: $i * 5%);
+    }
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -44,57 +56,9 @@ h1 {
   
 }
 
-.container-1 {
-  .base-color {
-    background-color: $base-bg-color-1;
+@for $i from 1 through 3 {
+  .container-#{$i} .base-color { 
+    background-color: list.nth($base-bg-colors, $i);
   }
-
-  @for $i from 1 through 4 {
-    .lighten-#{$i} {
-      background-color: color.adjust($base-bg-color-1, $lightness: $i * 5%);
-      color: color.scale($variation-color, $lightness: $i * -5%);
-    }
-
-    .darken-#{$i} {
-      background-color: color.adjust($base-bg-color-1, $lightness: $i * -5%);
-      color: color.adjust($variation-color, $lightness: $i * 5%);
-    }
-  }
-
-}
-.container-2 {
-  .base-color {
-    background-color: $base-bg-color-2;
-  }
-
-  @for $i from 1 through 4 {
-    .lighten-#{$i} {
-      background-color: color.adjust($base-bg-color-2, $lightness: $i * 5%);  
-      color: color.scale($variation-color, $lightness: $i * -5%);
-    }
-
-    .darken-#{$i} {
-      background-color: color.adjust($base-bg-color-2, $lightness: $i * -5%);
-      color: color.adjust($variation-color, $lightness: $i * 5%);
-    }
-  }
-
-}
-.container-3 {
-  .base-color {
-    background-color: $base-bg-color-3;
-  }
-
-  @for $i from 1 through 4 {
-    .lighten-#{$i} {
-      background-color: color.adjust($base-bg-color-3, $lightness: $i * 5%);  
-      color: color.scale($variation-color, $lightness: $i * -5%);
-    }
-
-    .darken-#{$i} {
-      background-color: color.adjust($base-bg-color-3, $lightness: $i * -5%);
-      color: color.adjust($variation-color, $lightness: $i * 5%);
-    }
-  }
-
+  @include color-palette($i);
 }
