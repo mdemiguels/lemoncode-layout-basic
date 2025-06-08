@@ -23,7 +23,8 @@ This repository contains a set of exercises for the **Layout Module** of the [Le
 3. **Exercise 3: Create a navigation bar using Flexbox.**
     - The HTML is completely open, meaning you can create the necessary structures as needed. The navigation bar responds to different resolutions. Use media queries to achieve this result.
 
-    <!-- ![Ejemplo de paleta de colores](./ejemplo.png) -->
+    ![Ejemplo de paleta de colores](./assets/navigation-desktop.png)
+    ![Ejemplo de paleta de colores](./assets/navigation-mobile.png)
 
 4. **Exercise 4: Create a card type element with Grid CSS.**
     - Alignments should be done with this feature, but HTML is completely open.
