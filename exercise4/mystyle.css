@@ -52,7 +52,7 @@ h1 {
 }
 
 .card__footer {
-  text-align: right;
+  justify-self: end;
 }
 
 .card__footer-date {
