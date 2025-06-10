@@ -1,54 +1,54 @@
 @import url(light-theme.css);
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
-    text-align: center;
-    margin: 20px 0;
+  text-align: center;
+  margin: 20px 0;
 }
 
 .box {
-    font-family: var(--box-font-style);
-    border: 2px solid darkgray;
-    border-radius: 3px;
-    width: 150px;
-    height: 100px;
-    margin: 2px;
-    padding: 25px;
+  font-family: var(--box-font-style);
+  border: 2px solid darkgray;
+  border-radius: 3px;
+  width: 150px;
+  height: 100px;
+  margin: 2px;
+  padding: 25px;
 }
 
 .box.base {
-    background-color: var(--base-bg-color);
+  background-color: var(--base-bg-color);
 }
 
 .box.important {
-    background-color: var(--important-bg-color);
+  background-color: var(--important-bg-color);
 }
 
 .box.warning {
-    background-color: var(--warning-bg-color);
+  background-color: var(--warning-bg-color);
 }
 
 .primary-font {
-    font-family: var(--primary-font-style);
-    margin: 10px 0;
+  font-family: var(--primary-font-style);
+  margin: 10px 0;
 }
 
 .secondary-font {
-    font-family: var(--secondary-font-style);
-    margin: 10px 0;
+  font-family: var(--secondary-font-style);
+  margin: 10px 0;
 }
 
 .box.shadow {
-    box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
 }
