@@ -1,5 +1,5 @@
-@use 'sass:color';
-@use 'sass:list';
+@use "sass:color";
+@use "sass:list";
 
 $base-bg-colors: #845ec2, #ff9671, #ff6f91;
 $base-color: white;
@@ -8,20 +8,20 @@ $variation-color: grey;
 @mixin color-palette($container) {
   @for $i from 1 through 4 {
     .container-#{$container} .lighten-#{$i} {
-      background-color: color.adjust(list.nth($base-bg-colors, $container), $lightness: $i * 5%);
+      background-color: color.adjust(
+        list.nth($base-bg-colors, $container),
+        $lightness: $i * 5%
+      );
       color: color.scale($variation-color, $lightness: $i * -5%);
     }
     .container-#{$container} .darken-#{$i} {
-      background-color: color.adjust(list.nth($base-bg-colors, $container), $lightness: $i * -5%);
+      background-color: color.adjust(
+        list.nth($base-bg-colors, $container),
+        $lightness: $i * -5%
+      );
       color: color.adjust($variation-color, $lightness: $i * 5%);
     }
   }
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -33,7 +33,9 @@ h1 {
   margin: 20px 0;
 }
 
-.container-1, .container-2, .container-3 {
+.container-1,
+.container-2,
+.container-3 {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -53,11 +55,10 @@ h1 {
   .base-color {
     min-width: 130px;
   }
-  
 }
 
 @for $i from 1 through 3 {
-  .container-#{$i} .base-color { 
+  .container-#{$i} .base-color {
     background-color: list.nth($base-bg-colors, $i);
   }
   @include color-palette($i);

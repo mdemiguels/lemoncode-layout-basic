@@ -30,9 +30,11 @@ h1 {
 .box.base {
     background-color: var(--base-bg-color);
 }
+
 .box.important {
     background-color: var(--important-bg-color);
 }
+
 .box.warning {
     background-color: var(--warning-bg-color);
 }
@@ -41,6 +43,7 @@ h1 {
     font-family: var(--primary-font-style);
     margin: 10px 0;
 }
+
 .secondary-font {
     font-family: var(--secondary-font-style);
     margin: 10px 0;
