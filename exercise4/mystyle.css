@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+
+:root {
+    --bg-body: #f1f1f0;
+    --bg-card: #ffffff;
+    --color-footer-date: #7ac649;
+    --bg-card-button: #7ac649;
+    --color-card-button: #ffffff;
+    --border-color-card: #e0e0e0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-body);
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.card {
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px repeat(4, auto);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color-card);
+    margin: 0 auto;
+    font-size: 0.8rem;
+}
+
+.card__image {
+    width: 100%;
+    height: 200px;
+}
+
+.card__heading {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 20px 10px 10px 10px;
+}
+
+.card__info {
+    color: #333;
+    line-height: 1.5;
+    font-weight: 200;
+    margin: 10px;
+}
+
+.card__footer {
+    text-align: right;
+    margin: 20px 10px 5px 0;
+}
+
+.card__footer-date {
+    color: var(--color-footer-date);
+    font-weight: 200;
+}
+
+.card__button {
+    background-color: var(--bg-card-button);
+    color: var(--color-card-button);
+    border: none;
+    padding: 10px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 10px;
+}
